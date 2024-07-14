@@ -415,6 +415,22 @@ void LLApp::writeMiniDump()
 }
 
 // static
+void LLApp::quit(bool force)
+{
+    if (LLApp* app = instance())
+    {
+        if (force)
+        {
+            app->forceQuit(); // Puts the viewer into 'shutting down without error' mode.
+        }
+        else
+        {
+            app->requestQuit(); // Request a quit. A kinder, gentler quit.
+        }
+    }
+}
+
+// static
 void LLApp::setQuitting()
 {
     if (!isExiting())

@@ -90,9 +90,9 @@ public:
 
     // Application control
     void flushLFSIO(); // waits for lfs transfers to complete
-    void forceQuit(); // Puts the viewer into 'shutting down without error' mode.
+    virtual void forceQuit(); // Puts the viewer into 'shutting down without error' mode.
     void fastQuit(S32 error_code = 0); // Shuts down the viewer immediately after sending a logout message
-    void requestQuit(); // Request a quit. A kinder, gentler quit.
+    virtual void requestQuit(); // Request a quit. A kinder, gentler quit.
     void userQuit(); // The users asks to quit. Confirm, then requestQuit()
     void earlyExit(const std::string& name,
                    const LLSD& substitutions = LLSD()); // Display an error dialog and forcibly quit.

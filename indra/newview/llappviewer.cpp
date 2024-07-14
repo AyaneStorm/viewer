@@ -3958,6 +3958,7 @@ void LLAppViewer::removeDumpDir()
     }
 }
 
+// virtual
 void LLAppViewer::forceQuit()
 {
     LLApp::setQuitting();
@@ -3980,6 +3981,7 @@ void LLAppViewer::fastQuit(S32 error_code)
     _exit(final_error_code);
 }
 
+// virtual
 void LLAppViewer::requestQuit()
 {
     LL_INFOS() << "requestQuit" << LL_ENDL;
